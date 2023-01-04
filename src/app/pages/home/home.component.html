@@ -1,0 +1,43 @@
+<div class="bg-slate-300 p-8 mt-10 w-3/4 mx-auto">
+
+    <div class="w-40">
+        <!--form [formGroup]="form" (submit)="send()"-->
+        <form [formGroup]="formLogin" (submit)="send()">
+    
+            <!-- input email -->
+            <div class="my-5 p-3">
+                <label for="email">Email</label>
+                <input type="text" id="email" formControlName="email" class="py-1 px-3 rounded" [(ngModel)]="correo">
+            </div>
+            
+            <!-- input pass -->
+            <div class="my-5 p-3">
+                <label for="pass">Password</label>
+                <input type="password" id="password" formControlName="password" class="py-1 px-3 rounded">
+            </div>
+            
+
+            <!-- input pass -->
+            <div class="my-5 p-3">
+                <label for="pass">Terminos</label>
+                <input type="checkbox" id="term" formControlName="term">
+            </div>
+
+
+            <!-- Button -->
+            <div class="my-5 py-1 px-3 text-white bg-blue-500 rounded">
+                <button [disabled]="formLogin.invalid">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bg-black p-4 text-white text-2xl">
+        {{formLogin.valid}}
+    </div>
+
+
+    <div class="bg-black p-4 text-white text-2xl">
+        {{formLogin.value | json}}
+    </div>
+
+</div>
